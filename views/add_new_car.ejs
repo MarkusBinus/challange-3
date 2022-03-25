@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head'); %>
+  <body class="d-flex">
+    <!-- SIDEBAR -->
+    <%- include("partials/sidebar"); %>
+
+    <!-- PAGE -->
+    <div class="flex-grow-1">
+      <!-- NAVBAR -->
+      <%- include("partials/navbar"); %>
+
+      <!-- MAIN PAGE -->
+      <div class="d-flex bg-grey flex-grow-1" style="min-height: 100vh;">
+
+        <!-- LEFT MENU -->
+        <%- include("partials/left_menu/cars"); %>
+
+        <!-- MAIN CONTENT -->
+        <main class="p-4 w-100">
+
+            <!-- BREADCRUMB -->
+            <nav class="mb-4" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-dark"><b>Cars</b></a></li>
+                  <li class="breadcrumb-item" aria-current="page"><b>List car</b></li>
+                  <li class="breadcrumb-item" aria-current="page">Add New Car</li>
+              </ol>
+            </nav>
+
+            <!-- <%= title %> -->
+              <h5 class="mb-4"><b>List Car</b></h5>
+
+            <!-- FORM -->
+            <form action="" method="post">
+              <!-- INPUT FORM -->
+              <div class="w-100 bg-white p-4 mb-5">
+                  <div class="mb-3 row">
+                      <label for="name" class="col-sm-2 col-form-label">Nama<span class="text-danger">*</span></label>
+                      <div class="col-sm-10 w-50">
+                          <input type="text" class="form-control" id="name" placeholder="Placeholder">
+                      </div>
+                  </div>
+                  <div class="mb-3 row">
+                      <label for="harga" class="col-sm-2 col-form-label">Harga<span
+                              class="text-danger">*</span></label>
+                      <div class="col-sm-10 w-50">
+                          <input type="number" class="form-control" id="harga" placeholder="Placeholder">
+                      </div>
+                  </div>
+                  <div class="mb-3 row">
+                      <label for="formFile" class="col-sm-2 col-form-label">Foto<span
+                              class="text-danger">*</span></label>
+                      <div class="w-50 col-sm-10">
+                          <input class="form-control" type="file" id="formFile">
+                          <div id="formFileHelpBlock" class="form-text">File size max. 2MB</div>
+                      </div>
+                      
+                  </div>
+                  <div class="mb-3 row">
+                      <label class="col-sm-2 col-form-label">Start Rent</label>
+                      <div class="w-50 col-sm-10">-</div>
+                  </div>
+                  <div class="mb-3 row">
+                      <label class="col-sm-2 col-form-label">Finish Rent</label>
+                      <div class="w-50 col-sm-10">-</div>
+                  </div>
+                  <div class="mb-3 row">
+                      <label class="col-sm-2 col-form-label">Created At</label>
+                      <div class="w-50 col-sm-10">-</div>
+                  </div>
+                  <div class="mb-3 row">
+                      <label class="col-sm-2 col-form-label">Updated At</label>
+                      <div class="w-50 col-sm-10">-</div>
+                  </div>
+              </div>
+
+              <!-- BUTTON FORM -->
+              <a href="/car"><button type="button" class="btn btn-outline-darkblue me-3">Cancel</button></a>
+              <button type="submit" class="btn btn-darkblue">Save</button>
+          </form>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

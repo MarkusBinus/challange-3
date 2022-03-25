@@ -1,0 +1,79 @@
+<span class="border-start border-3 ps-2 border-darkblue"><b>List Cars</b></span>
+<table class="table table-light mt-3 table-borderless shadow-sm">
+    <thead class="table-primary">
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Price</th>
+            <th scope="col">Start Rent</th>
+            <th scope="col">Finish Rent</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Updated at</th>
+        </tr>
+    </thead>
+    <tbody class="table-bordered">
+        <% carData.forEach( item => { %>
+            <tr>
+                <th scope="row"><%= item.No %></th>
+                <td><%= item.Name %></td>
+                <td><%= item.Category %></td>
+                <td><%= item.Price %></td>
+                <td><%= item.StartRent %></td>
+                <td><%= item.FinishRent %></td>
+                <td><%= item.CreatedAt %></td>
+                <td><%= item.UpdatedAt %></td>
+            </tr>
+        <% }) %>    
+    </tbody>
+</table>
+
+<!-- TABLE PAGINATION -->
+<div class="d-flex gap-3 align-items-center">
+    <div>
+        <span>Limit<br></span>
+        <select class="form-select mt-2" aria-label="Default select example">
+            <option selected>10</option>
+            <option value="2">20</option>
+            <option value="3">30</option>
+        </select>
+    </div>
+
+    <div>
+        <span>Jump To Page<br></span>
+        <div class="input-group mt-2">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            <div class="input-group-append">
+                <button class="btn btn-darkblue" type="button">Go</button>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="ms-auto" aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">...</a></li>
+            <li class="page-item"><a class="page-link" href="#">9</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

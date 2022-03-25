@@ -1,0 +1,15 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#sidebar .nav-item:hover{
+  background-color: #1b38bb;
+}
+
+.border-darkblue{border-color:#0D28A6!important}
+
+/* #0D28A6 */

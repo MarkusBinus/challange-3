@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <%- include('partials/head'); %>
+  <body class="d-flex">
+    <!-- SIDEBAR -->
+    <%- include("partials/sidebar"); %>
+
+    <!-- PAGE -->
+    <div class="flex-grow-1">
+      <!-- NAVBAR -->
+      <%- include("partials/navbar"); %>
+
+      <!-- MAIN PAGE -->
+      <div class="d-flex bg-grey flex-grow-1" style="min-height: 100vh;">
+
+        <!-- LEFT MENU -->
+        <%- include("partials/left_menu/cars"); %>
+
+        <!-- MAIN CONTENT -->
+        <main class="p-4 w-100">
+
+            <!-- BREADCRUMB -->
+            <nav class="mb-4" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-dark"><b>Cars</b></a></li>
+                  <li class="breadcrumb-item" aria-current="page">List car</li>
+              </ol>
+            </nav>
+
+            <!-- TITLE & ADD BUTTON -->
+            <div class="d-flex justify-content-between">
+              <h5 class="mb-4"><b>List Car</b></h5>
+              <a href="addcar"><button type="submit" class="btn btn-darkblue">
+                <img src="images/icons/fi_plus.svg" alt="Plus"> Add New Car
+              </button></a>
+            </div>
+
+            <!-- FILTER BUTTON GROUP -->
+            <div class="d-flex gap-3 mb-4">
+              <button type="submit" class="btn btn-outline-darkblue">All</button>
+              <button type="submit" class="btn btn-outline-darkblue">Small</button>
+              <button type="submit" class="btn btn-outline-darkblue">Medium</button>
+              <button type="submit" class="btn btn-outline-darkblue">Large</button>
+            </div>
+
+            <!-- CAR CARD LIST -->
+            <section class="d-flex flex-wrap justify-content-evenly gap-4">
+              <% for(let i = 0; i < 9; i++){ %>
+                <%- include("partials/car_card"); %>
+              <% } %>  
+            </section>
+          </main>
+      </div>
+    </div>
+  </body>
+</html>
